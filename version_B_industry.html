@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengyi — Quant Engineer & AI Infra Builder</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #060b0f;
+  --bg2: #0a1520;
+  --bg3: #0d1f2d;
+  --accent: #06b6d4;
+  --accent2: #f97316;
+  --border: #112233;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --soft: #94a3b8;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'JetBrains Mono', monospace; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+/* NAV */
+nav { position: sticky; top: 0; background: rgba(6,11,15,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; justify-content: space-between; align-items: center; height: 56px; z-index: 100; }
+.nav-name { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 1px; font-family: 'JetBrains Mono', monospace; }
+.nav-dot { color: var(--accent2); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero { padding: 100px 48px 72px; max-width: 900px; margin: 0 auto; }
+.hero-pre { font-size: 12px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; font-family: monospace; }
+.hero-pre::before { content: '> '; color: var(--accent2); }
+.hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 12px; letter-spacing: -1px; }
+.hero h1 .name { color: var(--text); }
+.hero h1 .role { background: linear-gradient(90deg, #06b6d4, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; font-size: 36px; margin-top: 4px; }
+.hero-sub { font-size: 16px; color: var(--soft); max-width: 580px; margin-bottom: 28px; line-height: 1.8; }
+.hero-highlights { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+.hl { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--soft); }
+.hl-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.hl-cyan { background: #06b6d4; }
+.hl-orange { background: #f97316; }
+.hl-green { background: #22c55e; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { padding: 11px 24px; background: linear-gradient(90deg,#0284c7,#06b6d4); color: white; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; letter-spacing: 0.5px; transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-ghost { padding: 11px 24px; border: 1px solid #1e3a4a; color: var(--soft); border-radius: 6px; font-size: 13px; text-decoration: none; transition: border-color 0.2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* SECTION */
+section { max-width: 900px; margin: 0 auto; padding: 64px 48px; border-top: 1px solid var(--border); }
+.section-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent2); margin-bottom: 8px; font-family: monospace; }
+.section-label::before { content: '// '; color: var(--muted); }
+.section-title { font-size: 26px; font-weight: 800; margin-bottom: 32px; }
+
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.skill-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; transition: border-color 0.2s; }
+.skill-card:hover { border-color: var(--accent); }
+.skill-icon { font-size: 22px; margin-bottom: 8px; }
+.skill-name { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.skill-items { font-size: 10px; color: var(--muted); line-height: 1.6; }
+
+/* PROJECTS */
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.project-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.2s; position: relative; overflow: hidden; }
+.project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.project-card.p1::before { background: linear-gradient(90deg, #06b6d4, #0284c7); }
+.project-card.p2::before { background: linear-gradient(90deg, #f97316, #dc2626); }
+.project-card.p3::before { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.project-card.p4::before { background: linear-gradient(90deg, #a855f7, #7c3aed); }
+.project-card:hover { border-color: #1e3a5f; }
+.project-num { font-size: 10px; color: var(--muted); letter-spacing: 1px; margin-bottom: 10px; font-family: monospace; }
+.project-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+.project-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 10px; padding: 2px 8px; border-radius: 4px; background: #0a1e30; color: #38bdf8; border: 1px solid #0c2e44; font-family: monospace; }
+.tag-orange { background: #1c0f04; color: #fb923c; border-color: #431407; }
+.tag-green  { background: #031a0a; color: #4ade80; border-color: #052e16; }
+
+/* EXPERIENCE */
+.exp-list { display: flex; flex-direction: column; gap: 20px; }
+.exp-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; display: grid; grid-template-columns: 1fr auto; gap: 16px; }
+.exp-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.exp-org { font-size: 13px; color: var(--accent); margin-bottom: 4px; }
+.exp-date { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+.exp-bullets { list-style: none; }
+.exp-bullets li { font-size: 12px; color: var(--soft); padding: 3px 0 3px 14px; position: relative; }
+.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 4px; }
+.exp-badge { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; align-self: start; white-space: nowrap; }
+.badge-gold { background: #1c1400; color: #fbbf24; border: 1px solid #92400e; }
+
+/* STACK */
+.stack-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack-item { padding: 6px 14px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; font-size: 12px; color: var(--soft); font-family: monospace; transition: border-color 0.2s; }
+.stack-item:hover { border-color: var(--accent); color: var(--accent); }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.contact-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; text-decoration: none; transition: border-color 0.2s; }
+.contact-card:hover { border-color: var(--accent); }
+.contact-icon { font-size: 22px; }
+.contact-label { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+.contact-value { font-size: 13px; color: var(--text); font-weight: 500; }
+
+/* FOOTER */
+footer { text-align: center; padding: 32px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); font-family: monospace; }
+
+@media (max-width: 680px) {
+  .hero { padding: 60px 24px 48px; }
+  .hero h1 { font-size: 38px; }
+  .hero h1 .role { font-size: 26px; }
+  section { padding: 48px 24px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  nav { padding: 0 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">pengyi<span class="nav-dot">.</span>dev</div>
+  <div class="nav-links">
+    <a href="#skills">Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pre">quant_engineer --mode=build</div>
+  <h1>
+    <span class="name">Pengyi</span>
+    <span class="role">Quant Engineer & AI Infra Builder</span>
+  </h1>
+  <p class="hero-sub">I build AI-powered research infrastructure for financial markets. From alpha signal pipelines to mobile-command delivery systems — engineering meets quantitative finance.</p>
+  <div class="hero-highlights">
+    <div class="hl"><div class="hl-dot hl-cyan"></div>FICC AI Infra MVP — signal research pipeline</div>
+    <div class="hl"><div class="hl-dot hl-orange"></div>WorldQuant IQC — UK #1 ranking</div>
+    <div class="hl"><div class="hl-dot hl-green"></div>PM2.0 — mobile-command agent delivery system</div>
+  </div>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="https://github.com/pengpengyi92" class="btn-ghost" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">skills</div>
+  <div class="section-title">Technical Stack</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-name">Python</div>
+      <div class="skill-items">pandas · numpy · sklearn · torch · FastAPI</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Quant Research</div>
+      <div class="skill-items">Alpha signals · Factor models · Backtesting · Risk</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-name">AI / LLM</div>
+      <div class="skill-items">Claude API · GPT-4 · Agent workflows · RAG</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🏦</div>
+      <div class="skill-name">FICC Markets</div>
+      <div class="skill-items">Fixed Income · FX · Rates · Credit signals</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-name">Infrastructure</div>
+      <div class="skill-items">GitHub API · CI/CD · Docker · YAML configs</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📐</div>
+      <div class="skill-name">Mathematics</div>
+      <div class="skill-items">Stochastic calculus · Stats · Optimisation</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔄</div>
+      <div class="skill-name">Workflow Design</div>
+      <div class="skill-items">Agent pipelines · PM2.0 · Review loops</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">Frontend</div>
+      <div class="skill-items">HTML · CSS · Markdown · GitHub Pages</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">projects</div>
+  <div class="section-title">What I've Built</div>
+  <div class="project-grid">
+    <div class="project-card p1">
+      <div class="project-num">PROJECT_001</div>
+      <div class="project-title">FICC AI Research Agent MVP</div>
+      <div class="project-desc">AI-augmented pipeline for FICC signal discovery. LLM generates hypotheses, Python validates signals, audit trail auto-generated. Built for reproducibility and mentor review.</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">FICC</span><span class="tag">Backtesting</span>
+      </div>
+    </div>
+    <div class="project-card p2">
+      <div class="project-num">PROJECT_002</div>
+      <div class="project-title">WorldQuant Alpha Portfolio</div>
+      <div class="project-desc">Systematic alpha signal research across equity, futures, and cross-asset universes in the WorldQuant IQC. Ranked #1 in the United Kingdom.</div>
+      <div class="project-tags">
+        <span class="tag tag-orange">Alpha Research</span><span class="tag tag-orange">WebSim</span><span class="tag tag-orange">Factor Models</span>
+      </div>
+    </div>
+    <div class="project-card p3">
+      <div class="project-num">PROJECT_003</div>
+      <div class="project-title">PM2.0 Mobile-Command Delivery</div>
+      <div class="project-desc">GitHub-centred AI agent delivery loop. Mobile issues task orders via GPT → GitHub backend stores state → Claude executes on computer → mobile reviews and approves.</div>
+      <div class="project-tags">
+        <span class="tag tag-green">GitHub API</span><span class="tag tag-green">Claude</span><span class="tag tag-green">GPT</span><span class="tag tag-green">Automation</span>
+      </div>
+    </div>
+    <div class="project-card p4">
+      <div class="project-num">PROJECT_004</div>
+      <div class="project-title">Quant Research Infrastructure</div>
+      <div class="project-desc">End-to-end reproducible research system for quantitative finance. Task-order-driven, agent-executed, mobile-reviewed. Designed to scale from solo research to team delivery.</div>
+      <div class="project-tags">
+        <span class="tag">CI/CD</span><span class="tag">Markdown</span><span class="tag">GitHub</span><span class="tag">Workflow</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">experience</div>
+  <div class="section-title">Track Record</div>
+  <div class="exp-list">
+    <div class="exp-card">
+      <div>
+        <div class="exp-title">Alpha Researcher — IQC</div>
+        <div class="exp-org">WorldQuant</div>
+        <div class="exp-date">2024 – 2025</div>
+        <ul class="exp-bullets">
+          <li>Ranked #1 in the United Kingdom in the International Quant Championship</li>
+          <li>Developed cross-asset alpha signals using equity, futures, and FX data</li>
+          <li>Built systematic backtesting workflows with full audit trails</li>
+        </ul>
+      </div>
+      <div class="exp-badge badge-gold">UK #1</div>
+    </div>
+    <div class="exp-card">
+      <div>
+        <div class="exp-title">BSc Mathematics & Data Science</div>
+        <div class="exp-org">King's College London</div>
+        <div class="exp-date">2022 – 2025</div>
+        <ul class="exp-bullets">
+          <li>Specialised in statistical learning, financial mathematics, and optimisation</li>
+          <li>Applied ML methods to financial time series modelling</li>
+        </ul>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK ROW -->
+<section>
+  <div class="section-label">tools</div>
+  <div class="section-title">Daily Stack</div>
+  <div class="stack-row">
+    <span class="stack-item">Python</span>
+    <span class="stack-item">Claude Code</span>
+    <span class="stack-item">GitHub</span>
+    <span class="stack-item">VS Code</span>
+    <span class="stack-item">pandas</span>
+    <span class="stack-item">numpy</span>
+    <span class="stack-item">scikit-learn</span>
+    <span class="stack-item">GitHub API</span>
+    <span class="stack-item">Markdown</span>
+    <span class="stack-item">YAML</span>
+    <span class="stack-item">LaTeX</span>
+    <span class="stack-item">ChatGPT</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">contact</div>
+  <div class="section-title">Let's Build</div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:pengpengyi92@gmail.com">
+      <span class="contact-icon">✉️</span>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">pengpengyi92@gmail.com</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://github.com/pengpengyi92" target="_blank">
+      <span class="contact-icon">🐙</span>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">github.com/pengpengyi92</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>// pengyi · quant_engineer · version_B_industry · 2026</footer>
+
+</body>
+</html>

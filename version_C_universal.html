@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengyi — Quant Researcher & Builder</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #080c10;
+  --bg2: #0d1520;
+  --bg3: #111e2d;
+  --gold: #f59e0b;
+  --gold2: #fbbf24;
+  --teal: #14b8a6;
+  --blue: #3b82f6;
+  --border: #152030;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --soft: #94a3b8;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+/* NAV */
+nav { position: sticky; top: 0; background: rgba(8,12,16,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; justify-content: space-between; align-items: center; height: 56px; z-index: 100; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark { width: 30px; height: 30px; background: linear-gradient(135deg, #f59e0b, #14b8a6); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #080c10; }
+.logo-name { font-size: 15px; font-weight: 700; color: var(--text); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero { padding: 96px 48px 80px; max-width: 920px; margin: 0 auto; }
+.hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.eyebrow-line { height: 1px; width: 32px; background: var(--gold); }
+.eyebrow-text { font-size: 12px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+.hero h1 { font-size: 58px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
+.hero h1 .hi { color: var(--text); }
+.hero h1 .name { color: var(--gold); }
+.hero h1 .comma { color: var(--muted); }
+.hero-dual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.dual-card { padding: 16px 20px; border-radius: 10px; border: 1px solid var(--border); }
+.dual-researcher { background: linear-gradient(135deg, #0d1a2e, #0a1220); border-color: #1d3a5f; }
+.dual-builder    { background: linear-gradient(135deg, #0f1a0d, #0a140a); border-color: #1a3a1d; }
+.dual-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+.dual-researcher .dual-label { color: #60a5fa; }
+.dual-builder .dual-label    { color: #4ade80; }
+.dual-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-gold { padding: 12px 28px; background: linear-gradient(90deg,#d97706,#f59e0b); color: #080c10; border-radius: 8px; font-size: 13px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; transition: opacity 0.2s; }
+.btn-gold:hover { opacity: 0.85; }
+.btn-outline { padding: 12px 24px; border: 1px solid var(--border); color: var(--soft); border-radius: 8px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* SECTION */
+section { max-width: 920px; margin: 0 auto; padding: 64px 48px; border-top: 1px solid var(--border); }
+.section-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.section-title { font-size: 26px; font-weight: 800; margin-bottom: 32px; }
+
+/* PILLARS — two columns researcher/builder */
+.pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pillar { border-radius: 14px; padding: 28px; }
+.pillar-research { background: var(--bg2); border: 1px solid #1d3a5f; }
+.pillar-build    { background: var(--bg2); border: 1px solid #1a3a1d; }
+.pillar-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.pillar-icon { font-size: 22px; }
+.pillar-title { font-size: 14px; font-weight: 700; }
+.pillar-research .pillar-title { color: #60a5fa; }
+.pillar-build .pillar-title    { color: #4ade80; }
+.pillar-items { list-style: none; }
+.pillar-items li { font-size: 12px; color: var(--soft); padding: 5px 0 5px 14px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.pillar-items li:last-child { border-bottom: none; }
+.pillar-items li::before { content: '›'; position: absolute; left: 0; color: var(--muted); }
+
+/* ACHIEVEMENTS */
+.achievements { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ach-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-align: center; position: relative; overflow: hidden; transition: border-color 0.2s; }
+.ach-card:hover { border-color: var(--gold); }
+.ach-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; }
+.ach1::after { background: linear-gradient(90deg,#f59e0b,#fbbf24); }
+.ach2::after { background: linear-gradient(90deg,#14b8a6,#06b6d4); }
+.ach3::after { background: linear-gradient(90deg,#3b82f6,#6366f1); }
+.ach-num { font-size: 36px; font-weight: 900; margin-bottom: 6px; }
+.ach1 .ach-num { color: var(--gold); }
+.ach2 .ach-num { color: var(--teal); }
+.ach3 .ach-num { color: var(--blue); }
+.ach-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.ach-sub { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+/* PROJECTS */
+.projects-list { display: flex; flex-direction: column; gap: 14px; }
+.proj { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 20px; transition: border-color 0.2s; }
+.proj:hover { border-color: var(--gold); }
+.proj-icon { font-size: 28px; flex-shrink: 0; }
+.proj-body { flex: 1; }
+.proj-title { font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+.proj-desc { font-size: 12px; color: var(--muted); margin-bottom: 10px; line-height: 1.6; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ptag { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+.ptag-gold { background: #1c1100; color: #fbbf24; border: 1px solid #78350f; }
+.ptag-teal { background: #041e1e; color: #2dd4bf; border: 1px solid #0f766e; }
+.ptag-blue { background: #0c1a3c; color: #93c5fd; border: 1px solid #1d4ed8; }
+.proj-right { text-align: right; flex-shrink: 0; }
+.proj-type { font-size: 10px; padding: 3px 8px; border-radius: 10px; white-space: nowrap; }
+.type-research { background: #0c1a3c; color: #93c5fd; border: 1px solid #1d4ed8; }
+.type-build    { background: #041e1e; color: #2dd4bf; border: 1px solid #0f766e; }
+.type-both     { background: #1c1100; color: #fbbf24; border: 1px solid #78350f; }
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, #f59e0b, #14b8a6, #3b82f6); }
+.tl-item { display: flex; gap: 24px; padding: 0 0 28px 0; }
+.tl-dot { width: 40px; flex-shrink: 0; display: flex; justify-content: center; padding-top: 4px; }
+.tl-dot-inner { width: 10px; height: 10px; border-radius: 50%; border: 2px solid; flex-shrink: 0; }
+.tl-gold  .tl-dot-inner { background: #f59e0b; border-color: #f59e0b; }
+.tl-teal  .tl-dot-inner { background: #14b8a6; border-color: #14b8a6; }
+.tl-blue  .tl-dot-inner { background: #3b82f6; border-color: #3b82f6; }
+.tl-body { flex: 1; }
+.tl-date { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+.tl-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.tl-org { font-size: 12px; margin-bottom: 6px; font-weight: 600; }
+.tl-gold  .tl-org { color: var(--gold); }
+.tl-teal  .tl-org { color: var(--teal); }
+.tl-blue  .tl-org { color: var(--blue); }
+.tl-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* CONTACT */
+.contact-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.contact-card { flex: 1; min-width: 200px; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 14px; text-decoration: none; transition: border-color 0.2s; }
+.contact-card:hover { border-color: var(--gold); }
+.contact-icon { font-size: 22px; }
+.contact-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.contact-value { font-size: 13px; color: var(--text); font-weight: 500; }
+
+/* FOOTER */
+footer { text-align: center; padding: 32px 48px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); }
+footer .tagline { color: var(--gold); font-weight: 600; }
+
+@media (max-width: 680px) {
+  .hero { padding: 60px 24px 48px; }
+  .hero h1 { font-size: 40px; }
+  .hero-dual { grid-template-columns: 1fr; }
+  section { padding: 48px 24px; }
+  .pillars { grid-template-columns: 1fr; }
+  .achievements { grid-template-columns: 1fr; }
+  nav { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-mark">P</div>
+    <div class="logo-name">Pengyi</div>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#timeline">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text">Researcher & Builder</div>
+  </div>
+  <h1>
+    <span class="hi">Hi, I'm </span><span class="name">Pengyi</span><span class="comma">.</span>
+  </h1>
+  <div class="hero-dual">
+    <div class="dual-card dual-researcher">
+      <div class="dual-label">🔬 Researcher</div>
+      <div class="dual-desc">Quantitative finance, AI-driven signal research, financial time series modelling. HKU PhD applicant. KCL Mathematics & Data Science.</div>
+    </div>
+    <div class="dual-card dual-builder">
+      <div class="dual-label">⚡ Builder</div>
+      <div class="dual-desc">AI infrastructure, FICC research pipelines, mobile-command agent delivery systems. WorldQuant UK #1. PM2.0 system architect.</div>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-gold">See My Work</a>
+    <a href="#contact" class="btn-outline">Get in Touch</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text" style="font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;">About</div>
+  </div>
+  <div class="section-title">Researcher × Builder</div>
+  <div class="pillars">
+    <div class="pillar pillar-research">
+      <div class="pillar-header">
+        <div class="pillar-icon">🔬</div>
+        <div class="pillar-title">Research Side</div>
+      </div>
+      <ul class="pillar-items">
+        <li>KCL Mathematics & Data Science graduate</li>
+        <li>WorldQuant IQC — ranked #1 in the United Kingdom</li>
+        <li>Research focus: FICC signals, AI for finance, time series</li>
+        <li>HKU PhD applicant (2026 entry target)</li>
+        <li>Interest: reproducible quant research infrastructure</li>
+      </ul>
+    </div>
+    <div class="pillar pillar-build">
+      <div class="pillar-header">
+        <div class="pillar-icon">⚡</div>
+        <div class="pillar-title">Builder Side</div>
+      </div>
+      <ul class="pillar-items">
+        <li>FICC AI Infra MVP — research pipeline from scratch</li>
+        <li>PM2.0 — mobile-command AI agent delivery system</li>
+        <li>GitHub-centred production workflow architect</li>
+        <li>Claude Code + GPT API integration specialist</li>
+        <li>Delivery-first: task orders, outputs, audit trails</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section>
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text" style="font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;">Highlights</div>
+  </div>
+  <div class="section-title">Key Achievements</div>
+  <div class="achievements">
+    <div class="ach-card ach1">
+      <div class="ach-num">#1</div>
+      <div class="ach-title">UK Ranking</div>
+      <div class="ach-sub">WorldQuant International Quant Championship</div>
+    </div>
+    <div class="ach-card ach2">
+      <div class="ach-num">KCL</div>
+      <div class="ach-title">Mathematics & Data Science</div>
+      <div class="ach-sub">King's College London — graduated 2025</div>
+    </div>
+    <div class="ach-card ach3">
+      <div class="ach-num">HKU</div>
+      <div class="ach-title">PhD Target</div>
+      <div class="ach-sub">Quantitative Finance / AI — 2026 entry</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text" style="font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;">Projects</div>
+  </div>
+  <div class="section-title">Selected Work</div>
+  <div class="projects-list">
+    <div class="proj">
+      <div class="proj-icon">🏦</div>
+      <div class="proj-body">
+        <div class="proj-title">FICC AI Research Agent MVP</div>
+        <div class="proj-desc">AI-augmented pipeline for Fixed Income, FX & Commodities signal discovery. LLM hypothesis generation → Python validation → reproducible backtesting → mentor-ready delivery cards.</div>
+        <div class="proj-tags">
+          <span class="ptag ptag-gold">FICC</span><span class="ptag ptag-blue">Python</span><span class="ptag ptag-teal">Claude API</span><span class="ptag ptag-blue">Backtesting</span>
+        </div>
+      </div>
+      <div class="proj-right"><span class="proj-type type-both">Research + Build</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-icon">🏆</div>
+      <div class="proj-body">
+        <div class="proj-title">WorldQuant Alpha Portfolio — UK #1</div>
+        <div class="proj-desc">Systematic alpha signal research in the WorldQuant IQC. Developed cross-asset factors across equity, futures, and FX universes. Ranked #1 in the United Kingdom.</div>
+        <div class="proj-tags">
+          <span class="ptag ptag-gold">Alpha Research</span><span class="ptag ptag-gold">Factor Models</span><span class="ptag ptag-gold">Cross-Asset</span>
+        </div>
+      </div>
+      <div class="proj-right"><span class="proj-type type-research">Research</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-icon">⚙️</div>
+      <div class="proj-body">
+        <div class="proj-title">PM2.0 — Mobile-Command AI Delivery System</div>
+        <div class="proj-desc">A GitHub-centred AI agent production loop: mobile task orders → GPT frontend → GitHub backend → Claude execution → mobile review & approval. A personal operating system for research delivery.</div>
+        <div class="proj-tags">
+          <span class="ptag ptag-teal">GitHub API</span><span class="ptag ptag-teal">Claude</span><span class="ptag ptag-teal">GPT</span><span class="ptag ptag-blue">Workflow</span>
+        </div>
+      </div>
+      <div class="proj-right"><span class="proj-type type-build">Build</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text" style="font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;">Journey</div>
+  </div>
+  <div class="section-title">Timeline</div>
+  <div class="timeline">
+    <div class="tl-item tl-gold">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-body">
+        <div class="tl-date">2026 — present</div>
+        <div class="tl-title">HKU PhD Application & B-Side Engineering</div>
+        <div class="tl-org">University of Hong Kong / Self-directed</div>
+        <div class="tl-desc">Building FICC AI Infra MVP, PM2.0 delivery system, and preparing PhD research proposal. Bridging quant research and AI engineering.</div>
+      </div>
+    </div>
+    <div class="tl-item tl-teal">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-body">
+        <div class="tl-date">2024 – 2025</div>
+        <div class="tl-title">Alpha Researcher — WorldQuant IQC</div>
+        <div class="tl-org">WorldQuant</div>
+        <div class="tl-desc">Developed systematic cross-asset alpha signals. Ranked #1 in the United Kingdom in the International Quant Championship.</div>
+      </div>
+    </div>
+    <div class="tl-item tl-blue">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-body">
+        <div class="tl-date">2022 – 2025</div>
+        <div class="tl-title">BSc Mathematics & Data Science</div>
+        <div class="tl-org">King's College London</div>
+        <div class="tl-desc">Foundation in statistical learning, financial mathematics, stochastic calculus, and applied machine learning.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text" style="font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;">Contact</div>
+  </div>
+  <div class="section-title">Let's Connect</div>
+  <div class="contact-row">
+    <a class="contact-card" href="mailto:pengpengyi92@gmail.com">
+      <span class="contact-icon">✉️</span>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">pengpengyi92@gmail.com</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://github.com/pengpengyi92" target="_blank">
+      <span class="contact-icon">🐙</span>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">github.com/pengpengyi92</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span class="tagline">Researcher × Builder</span> · Pengyi · Version C — Universal · 2026
+</footer>
+
+</body>
+</html>

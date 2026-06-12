@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengyi — Researcher & Quantitative Scientist</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #07091a;
+  --bg2: #0d1130;
+  --bg3: #111827;
+  --accent: #818cf8;
+  --accent2: #c084fc;
+  --border: #1e2a4a;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --soft: #94a3b8;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Georgia', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+/* NAV */
+nav { position: sticky; top: 0; background: rgba(7,9,26,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; justify-content: space-between; align-items: center; height: 56px; z-index: 100; }
+.nav-name { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero { padding: 100px 48px 80px; max-width: 860px; margin: 0 auto; }
+.hero-tag { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); border: 1px solid #2d3580; background: #0f1240; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+.hero h1 { font-size: 52px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.5px; }
+.hero h1 span { background: linear-gradient(135deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 18px; color: var(--soft); max-width: 560px; margin-bottom: 32px; line-height: 1.7; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+.badge { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.badge-purple { background: #1e1b4b; color: #a5b4fc; border: 1px solid #3730a3; }
+.badge-pink   { background: #2d1b4e; color: #d8b4fe; border: 1px solid #7e22ce; }
+.badge-blue   { background: #0c1f3c; color: #93c5fd; border: 1px solid #1d4ed8; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { padding: 11px 24px; background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-ghost { padding: 11px 24px; border: 1px solid var(--border); color: var(--soft); border-radius: 8px; font-size: 13px; text-decoration: none; transition: border-color 0.2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* SECTION */
+section { max-width: 860px; margin: 0 auto; padding: 64px 48px; border-top: 1px solid var(--border); }
+.section-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.section-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: start; }
+.about-text p { color: var(--soft); margin-bottom: 16px; font-size: 15px; }
+.about-stats { display: flex; flex-direction: column; gap: 16px; }
+.stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+.stat-num { font-size: 28px; font-weight: 700; color: var(--accent); }
+.stat-desc { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+/* RESEARCH INTERESTS */
+.interests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.interest-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s; }
+.interest-card:hover { border-color: var(--accent); }
+.interest-icon { font-size: 24px; margin-bottom: 10px; }
+.interest-title { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+.interest-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* EDUCATION */
+.edu-list { display: flex; flex-direction: column; gap: 20px; }
+.edu-card { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 20px 24px; }
+.edu-degree { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.edu-school { font-size: 13px; color: var(--accent); margin-bottom: 4px; }
+.edu-date { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.edu-note { font-size: 12px; color: var(--soft); }
+
+/* PROJECTS */
+.project-list { display: flex; flex-direction: column; gap: 16px; }
+.project-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; transition: border-color 0.2s; }
+.project-card:hover { border-color: #7c3aed; }
+.project-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.project-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.project-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; background: #1e1b4b; color: #a5b4fc; border: 1px solid #3730a3; }
+.project-status { font-size: 11px; padding: 4px 10px; border-radius: 10px; white-space: nowrap; }
+.status-active { background: #052e16; color: #4ade80; border: 1px solid #166534; }
+.status-done   { background: #1e1b4b; color: #a5b4fc; border: 1px solid #3730a3; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; text-decoration: none; transition: border-color 0.2s; }
+.contact-card:hover { border-color: var(--accent); }
+.contact-icon { font-size: 24px; }
+.contact-label { font-size: 11px; color: var(--muted); }
+.contact-value { font-size: 13px; color: var(--text); font-weight: 500; }
+
+/* FOOTER */
+footer { text-align: center; padding: 32px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); }
+
+@media (max-width: 680px) {
+  .hero { padding: 60px 24px 48px; }
+  .hero h1 { font-size: 36px; }
+  section { padding: 48px 24px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .interests-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  nav { padding: 0 24px; }
+  .nav-links { gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Pengyi</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">PhD Applicant · Quantitative Research</div>
+  <h1>Pengyi<br><span>Researcher in<br>Quantitative Finance & AI</span></h1>
+  <p class="hero-sub">Mathematics & Data Science graduate with a focus on AI-driven financial modelling, signal research, and applied machine learning in quantitative systems.</p>
+  <div class="hero-badges">
+    <span class="badge badge-purple">KCL Mathematics & Data Science</span>
+    <span class="badge badge-pink">WorldQuant — UK #1</span>
+    <span class="badge badge-blue">HKU PhD Applicant</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">View Research</a>
+    <a href="#contact" class="btn-ghost">Get in Touch</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="section-title">Background</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a quantitative researcher and mathematician with a strong foundation in statistical modelling, machine learning, and financial time series analysis. My academic journey at King's College London gave me rigorous training in both pure mathematics and applied data science.</p>
+      <p>My research interest sits at the intersection of AI infrastructure and financial markets — specifically how intelligent agent systems can accelerate research iteration and decision-making in institutional settings like FICC and alpha research.</p>
+      <p>I am currently applying to the PhD programme at the University of Hong Kong, where I aim to develop reproducible, AI-augmented frameworks for financial signal discovery and portfolio construction.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">#1</div>
+        <div class="stat-desc">WorldQuant IQC<br>United Kingdom Ranking</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">KCL</div>
+        <div class="stat-desc">Mathematics &<br>Data Science</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">HKU</div>
+        <div class="stat-desc">PhD Programme<br>Target 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research">
+  <div class="section-label">Research</div>
+  <div class="section-title">Research Interests</div>
+  <div class="interests-grid">
+    <div class="interest-card">
+      <div class="interest-icon">📊</div>
+      <div class="interest-title">Quantitative Signal Research</div>
+      <div class="interest-desc">Alpha discovery in FICC and equity markets using statistical and ML-driven approaches. Cross-asset signal construction and factor modelling.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🤖</div>
+      <div class="interest-title">AI Infrastructure for Finance</div>
+      <div class="interest-desc">Agent-based systems for accelerating research workflows. LLM integration in quantitative research pipelines and automated hypothesis generation.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">📈</div>
+      <div class="interest-title">Financial Time Series</div>
+      <div class="interest-desc">Deep learning architectures for financial forecasting. Non-stationary modelling, regime detection, and robust backtesting methodology.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🔬</div>
+      <div class="interest-title">Reproducible Research Systems</div>
+      <div class="interest-desc">Building audit-trail-first research pipelines that bridge academic rigour and production deployment in institutional settings.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🏦</div>
+      <div class="interest-title">FICC Market Structure</div>
+      <div class="interest-desc">Fixed income, FX, and commodities market microstructure. Yield curve dynamics, credit signals, and macro factor decomposition.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🧮</div>
+      <div class="interest-title">Statistical Learning Theory</div>
+      <div class="interest-desc">Theoretical foundations of high-dimensional statistics and their application to noisy, non-IID financial data environments.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <div class="section-title">Academic Background</div>
+  <div class="edu-list">
+    <div class="edu-card">
+      <div class="edu-degree">PhD in Finance / Quantitative Methods (Applicant)</div>
+      <div class="edu-school">The University of Hong Kong (HKU)</div>
+      <div class="edu-date">Target Entry: 2026</div>
+      <div class="edu-note">Research focus: AI-augmented signal research, FICC market modelling, and reproducible quantitative research infrastructure.</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">BSc Mathematics & Data Science</div>
+      <div class="edu-school">King's College London (KCL)</div>
+      <div class="edu-date">Graduated 2025</div>
+      <div class="edu-note">Core modules: Statistical Modelling, Machine Learning, Stochastic Calculus, Financial Mathematics, Optimisation.</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">WorldQuant IQC — Alpha Research</div>
+      <div class="edu-school">WorldQuant (International Quant Championship)</div>
+      <div class="edu-date">2024 – 2025</div>
+      <div class="edu-note">Ranked #1 in the United Kingdom. Developed systematic alpha signals across equity, futures, and cross-asset universes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">Research & Engineering</div>
+  <div class="project-list">
+    <div class="project-card">
+      <div>
+        <div class="project-title">FICC AI Research Agent MVP</div>
+        <div class="project-desc">An AI-augmented research pipeline for Fixed Income, FX, and Commodities signal discovery. Integrates LLM-based hypothesis generation with systematic backtesting and audit trail infrastructure.</div>
+        <div class="project-tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">FICC</span><span class="tag">Agent</span><span class="tag">Backtesting</span></div>
+      </div>
+      <span class="project-status status-active">Active</span>
+    </div>
+    <div class="project-card">
+      <div>
+        <div class="project-title">WorldQuant Alpha Portfolio — UK #1</div>
+        <div class="project-desc">Developed and submitted systematic alpha signals in the WorldQuant IQC, achieving the top ranking in the United Kingdom. Signals span equity, futures, and cross-asset factors.</div>
+        <div class="project-tags"><span class="tag">Alpha Research</span><span class="tag">Factor Models</span><span class="tag">WebSim</span></div>
+      </div>
+      <span class="project-status status-done">Completed</span>
+    </div>
+    <div class="project-card">
+      <div>
+        <div class="project-title">PM2.0 Mobile-Command AI Delivery System</div>
+        <div class="project-desc">A GitHub-centred AI agent delivery loop allowing mobile task ordering, agent execution, and mobile review-approval. Designed as a scalable personal research production system.</div>
+        <div class="project-tags"><span class="tag">GitHub API</span><span class="tag">Claude</span><span class="tag">GPT</span><span class="tag">Workflow</span></div>
+      </div>
+      <span class="project-status status-active">Active</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Get in Touch</div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:pengpengyi92@gmail.com">
+      <span class="contact-icon">✉️</span>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">pengpengyi92@gmail.com</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://github.com/pengpengyi92" target="_blank">
+      <span class="contact-icon">🐙</span>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">github.com/pengpengyi92</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>Pengyi · Quantitative Researcher · Version A — Academic</p>
+  <p style="margin-top:6px;font-size:11px;">Built with PM2.0 · 2026</p>
+</footer>
+
+</body>
+</html>
