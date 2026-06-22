@@ -1,6 +1,6 @@
 ---
 title: "HKUDS Quant and Trading Projects: AI Trader Learning Log"
-date: 2026-06-23 10:30:00 +0800
+date: 2026-06-23 03:00:00 +0800
 categories: [Learning, Quant Research]
 tags: [hkuds, ai-trader, vibe-trading, futureshow, quant-research, trading-agents, rag]
 ---
