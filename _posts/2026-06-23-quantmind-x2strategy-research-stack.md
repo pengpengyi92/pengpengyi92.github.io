@@ -1,6 +1,6 @@
 ---
 title: "QuantMind and X2Strategy: From Financial Knowledge to Executable Strategies"
-date: 2026-06-23 00:30:00 +0800
+date: 2026-06-23 00:00:00 +0800
 categories: [Learning, Quant Research]
 tags: [llmquant, quantmind, x2strategy, research-os, trading-agents]
 ---
