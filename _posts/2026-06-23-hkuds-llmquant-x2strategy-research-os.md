@@ -1,6 +1,6 @@
 ---
 title: "HKUDS, LLMQuant, and X2Strategy: Toward a Personal Research and Quant Production OS"
-date: 2026-06-23 12:00:00 +0800
+date: 2026-06-23 02:00:00 +0800
 categories: [Learning, Research OS]
 tags: [hkuds, llmquant, x2strategy, research-os, quant-research, agents]
 ---
