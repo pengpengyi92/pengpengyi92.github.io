@@ -1,6 +1,6 @@
 ---
 title: "LLMQuant 学习地图: 从项目阅读到个人 Research OS"
-date: 2026-06-22 14:50:00 +0800
+date: 2026-06-22 13:00:00 +0800
 categories: [Learning, Quant Research]
 tags: [llmquant, project-map, research-os, open-source, study-log]
 ---

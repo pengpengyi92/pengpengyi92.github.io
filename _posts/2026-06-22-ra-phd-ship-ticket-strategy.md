@@ -1,6 +1,6 @@
 ---
 title: "RA / PhD 船票策略: 用研究入口换长期自由度"
-date: 2026-06-22 15:05:00 +0800
+date: 2026-06-22 13:15:00 +0800
 categories: [Career, Research]
 tags: [ra, phd, research-engineer, ai-scientist, career-planning]
 ---

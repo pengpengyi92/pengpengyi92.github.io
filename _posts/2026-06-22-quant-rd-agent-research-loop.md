@@ -1,6 +1,6 @@
 ---
 title: "Quant R&D Agent: 从因子假设到下一轮研究计划"
-date: 2026-06-22 14:35:00 +0800
+date: 2026-06-22 12:45:00 +0800
 categories: [Quant Research, AI Agents]
 tags: [quant, rd-agent, llm-agent, backtesting, factor-research]
 ---

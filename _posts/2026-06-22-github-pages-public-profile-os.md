@@ -1,6 +1,6 @@
 ---
 title: "GitHub Pages Public Profile OS: 把个人主页变成研究资产入口"
-date: 2026-06-22 14:20:00 +0800
+date: 2026-06-22 12:30:00 +0800
 categories: [AI Scientist, Portfolio]
 tags: [github-pages, jekyll, chirpy, public-profile, research-os]
 ---
