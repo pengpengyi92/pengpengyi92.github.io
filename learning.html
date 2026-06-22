@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pengyi learning log - AI agents, quant research, research engineering, RA applications, and open-source output.">
+<title>Pengyi - Learning Log</title>
+<style>
+:root {
+  --bg: #071018;
+  --bg2: #0b1620;
+  --card: #101d2a;
+  --line: #1f3345;
+  --text: #e5edf5;
+  --muted: #8aa0b5;
+  --soft: #b7c7d8;
+  --gold: #f2b84b;
+  --blue: #69a7ff;
+  --green: #6ee7b7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: var(--gold); text-decoration: none; }
+nav {
+  height: 58px;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7,16,24,0.92);
+  position: sticky;
+  top: 0;
+}
+.brand { color: var(--text); font-weight: 850; }
+.brand span { color: var(--gold); }
+.nav-links { display: flex; gap: 18px; font-size: 13px; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--gold); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 34px; }
+header { padding: 78px 34px 50px; max-width: 980px; margin: 0 auto; }
+.label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1.05; letter-spacing: -2px; margin-bottom: 18px; }
+.sub { color: var(--soft); max-width: 760px; font-size: 17px; }
+section { border-top: 1px solid var(--line); padding: 56px 0; }
+h2 { font-size: 28px; margin-bottom: 10px; }
+.lead { color: var(--soft); max-width: 760px; margin-bottom: 22px; }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.card {
+  background: linear-gradient(180deg, rgba(16,29,42,0.96), rgba(11,22,32,0.96));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+}
+.card h3 { font-size: 16px; margin-bottom: 8px; }
+.card p, .card li { color: var(--muted); font-size: 13px; }
+ul { list-style: none; display: grid; gap: 8px; margin-top: 12px; }
+li { position: relative; padding-left: 16px; }
+li::before { content: ">"; position: absolute; left: 0; color: var(--gold); }
+.log { display: grid; gap: 14px; }
+.log-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.log-item:last-child { border-bottom: none; }
+.date { color: var(--gold); font-size: 12px; font-weight: 900; }
+.log-body h3 { font-size: 15px; margin-bottom: 4px; }
+.log-body p { color: var(--muted); font-size: 13px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.tag {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--soft);
+  font-size: 11px;
+  padding: 3px 8px;
+}
+footer { border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 12px; padding: 28px; }
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .wrap, header { padding-left: 22px; padding-right: 22px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .log-item { grid-template-columns: 1fr; gap: 6px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Pengyi<span>.</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#sprints">Sprints</a>
+    <a href="#outputs">Outputs</a>
+    <a href="#rules">Public Rules</a>
+  </div>
+</nav>
+
+<header>
+  <div class="label">Learning Log</div>
+  <h1>Convert every learning step into public research assets.</h1>
+  <p class="sub">
+    This page tracks the learning and output system behind my AI scientist path:
+    RA applications, quant research agents, research engineering, technical writing, and open-source portfolio building.
+  </p>
+</header>
+
+<main>
+  <section id="sprints">
+    <div class="wrap">
+      <div class="label">Current Sprints</div>
+      <h2>What I am building now.</h2>
+      <p class="lead">The current focus is to turn the RA/PhD transition into a visible pipeline of projects, writing, and research conversations.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>RA Application Pipeline</h3>
+          <p>Target labs and teams in LLM agents, AI for finance, quant research automation, RAG, AI infrastructure, and AI4Science-adjacent systems.</p>
+          <ul>
+            <li>Build a PI/lab list</li>
+            <li>Write customized emails</li>
+            <li>Attach one-page CV and project links</li>
+            <li>Track meetings and next actions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quant R&D Agent</h3>
+          <p>Package a public-safe agent workflow that demonstrates factor ideation, implementation, backtesting, bias diagnosis, and next-plan generation.</p>
+          <ul>
+            <li>Sanitized factor examples</li>
+            <li>CLI validation workflow</li>
+            <li>Small benchmark report</li>
+            <li>Technical write-up</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Research OS</h3>
+          <p>Maintain a clean experiment system with project specs, artifacts, reports, and reproducible runs.</p>
+          <ul>
+            <li>Project manifest</li>
+            <li>Experiment lineage</li>
+            <li>Report templates</li>
+            <li>Research memory</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Technical Writing</h3>
+          <p>Turn projects into public artifacts: technical reports, workshop-style drafts, README narratives, and PhD/RA statements.</p>
+          <ul>
+            <li>One technical report per core project</li>
+            <li>One public demo per system</li>
+            <li>One concise application narrative</li>
+            <li>One GitHub update loop per week</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="outputs">
+    <div class="wrap">
+      <div class="label">Output Ledger</div>
+      <h2>Learning should leave a trail.</h2>
+      <p class="lead">This ledger starts with the current transition phase. Future entries should link to repositories, reports, demos, and notes.</p>
+      <div class="card log">
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
+            <h3>Personal GitHub Pages portfolio v0.2</h3>
+            <p>Converted the website from three draft versions into a formal public-facing portfolio and learning index.</p>
+            <div class="tag-row">
+              <span class="tag">GitHub Pages</span><span class="tag">Portfolio</span><span class="tag">Public Narrative</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
+            <h3>Quant R&D Agent direction</h3>
+            <p>Defined the research loop: hypothesis generation, implementation, backtest, bias diagnosis, and next-round research planning with human PM review.</p>
+            <div class="tag-row">
+              <span class="tag">LLM Agent</span><span class="tag">Quant Research</span><span class="tag">R&D Loop</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
+            <h3>Research OS v0</h3>
+            <p>Started a reproducible project system for experiments, factor specs, reports, and artifacts.</p>
+            <div class="tag-row">
+              <span class="tag">Research OS</span><span class="tag">Experiment Tracking</span><span class="tag">Open Source Prep</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
+            <h3>RA and PhD application package system</h3>
+            <p>Built a versioned CV/application workspace for RA, PhD, AI research, and quant roles.</p>
+            <div class="tag-row">
+              <span class="tag">RA</span><span class="tag">PhD</span><span class="tag">CV Package</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curriculum">
+    <div class="wrap">
+      <div class="label">Curriculum</div>
+      <h2>Core learning tracks.</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>AI Agents</h3>
+          <p>Planning, tool use, memory, multi-agent workflows, RAG, evaluation, and agent reliability.</p>
+        </div>
+        <div class="card">
+          <h3>Quant Research</h3>
+          <p>Factor research, financial time series, backtesting, market microstructure, risk, and portfolio construction.</p>
+        </div>
+        <div class="card">
+          <h3>Research Engineering</h3>
+          <p>Reproducible repos, CLI tools, data pipelines, tests, reports, benchmarks, and experiment governance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="wrap">
+      <div class="label">Public Rules</div>
+      <h2>What can be published.</h2>
+      <p class="lead">The site should compound credibility without leaking private or confidential information.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Publish</h3>
+          <ul>
+            <li>Open-source code and sanitized demos</li>
+            <li>Research notes and paper summaries</li>
+            <li>Technical reports and benchmark results</li>
+            <li>Public CV and application narratives</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Do Not Publish</h3>
+          <ul>
+            <li>Employer confidential data or internal documents</li>
+            <li>Private factor libraries without sanitization</li>
+            <li>Client names, internal processes, or non-public metrics</li>
+            <li>Anything that violates contract, IP, or compliance rules</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Pengyi - Learning Log - public-safe research asset ledger
+</footer>
+</body>
+</html>

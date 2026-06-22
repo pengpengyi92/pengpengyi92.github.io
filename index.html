@@ -3,58 +3,475 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pengyi — Website Versions</title>
+<meta name="description" content="Pengyi - AI Scientist in training, quant research engineer, and builder of AI research agents for quantitative discovery.">
+<title>Pengyi - AI Scientist in Training</title>
 <style>
+:root {
+  --bg: #071018;
+  --bg2: #0b1620;
+  --card: #101d2a;
+  --line: #1f3345;
+  --text: #e5edf5;
+  --muted: #8aa0b5;
+  --soft: #b7c7d8;
+  --gold: #f2b84b;
+  --blue: #69a7ff;
+  --green: #6ee7b7;
+  --red: #fb7185;
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #080c10; color: #e2e8f0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
-.container { max-width: 700px; width: 100%; }
-h1 { font-size: 22px; color: #f59e0b; margin-bottom: 6px; }
-p { font-size: 13px; color: #64748b; margin-bottom: 36px; }
-.cards { display: flex; flex-direction: column; gap: 16px; }
-.card { border-radius: 14px; padding: 24px 28px; text-decoration: none; display: flex; justify-content: space-between; align-items: center; transition: opacity 0.2s; border: 1px solid; }
-.card:hover { opacity: 0.85; }
-.card-a { background: linear-gradient(135deg,#1e1b4b,#0d0b2e); border-color: #6366f1; }
-.card-b { background: linear-gradient(135deg,#083344,#04161e); border-color: #06b6d4; }
-.card-c { background: linear-gradient(135deg,#1c1100,#0f0a00); border-color: #f59e0b; }
-.card-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-.card-a .card-label { color: #a5b4fc; }
-.card-b .card-label { color: #67e8f9; }
-.card-c .card-label { color: #fbbf24; }
-.card-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-.card-desc { font-size: 12px; color: #64748b; }
-.card-arrow { font-size: 20px; color: #334155; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(105,167,255,0.16), transparent 28rem),
+    radial-gradient(circle at top right, rgba(242,184,75,0.12), transparent 24rem),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: inherit; }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 60px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(7,16,24,0.88);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.brand { text-decoration: none; font-weight: 800; letter-spacing: 0.4px; }
+.brand span { color: var(--gold); }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; }
+.nav-links a:hover { color: var(--gold); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 36px; }
+.hero { padding: 96px 36px 72px; max-width: 1080px; margin: 0 auto; }
+.eyebrow {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ""; width: 36px; height: 1px; background: var(--gold); display: block; }
+h1 {
+  max-width: 860px;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.03;
+  letter-spacing: -2.6px;
+  margin-bottom: 22px;
+}
+.gradient {
+  background: linear-gradient(90deg, var(--gold), var(--green), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-sub {
+  max-width: 740px;
+  color: var(--soft);
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+.hero-sub strong { color: var(--text); }
+.pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 34px; }
+.pill {
+  border: 1px solid var(--line);
+  background: rgba(16,29,42,0.78);
+  border-radius: 999px;
+  padding: 7px 13px;
+  color: var(--soft);
+  font-size: 12px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid var(--line);
+}
+.btn-primary { background: var(--gold); color: #081018; border-color: var(--gold); }
+.btn-secondary { background: rgba(16,29,42,0.7); color: var(--text); }
+section { border-top: 1px solid var(--line); padding: 66px 0; }
+.section-head { margin-bottom: 28px; }
+.label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+h2 { font-size: 30px; letter-spacing: -0.7px; }
+.lead { color: var(--soft); max-width: 760px; margin-top: 8px; }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.card {
+  background: linear-gradient(180deg, rgba(16,29,42,0.96), rgba(11,22,32,0.96));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+}
+.card h3 { font-size: 16px; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 13px; }
+.card ul { list-style: none; margin-top: 12px; display: grid; gap: 8px; }
+.card li {
+  color: var(--soft);
+  font-size: 13px;
+  padding-left: 16px;
+  position: relative;
+}
+.card li::before {
+  content: ">";
+  color: var(--gold);
+  position: absolute;
+  left: 0;
+}
+.project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: start;
+}
+.project + .project { margin-top: 14px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.tag {
+  font-size: 11px;
+  color: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+.status {
+  white-space: nowrap;
+  font-size: 11px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: #081018;
+  background: var(--green);
+  font-weight: 900;
+}
+.status.gold { background: var(--gold); }
+.status.blue { background: var(--blue); }
+.status.red { background: var(--red); color: white; }
+.timeline { display: grid; gap: 14px; }
+.time-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.time-item:last-child { border-bottom: none; }
+.time-date { color: var(--gold); font-size: 12px; font-weight: 900; }
+.time-body h3 { font-size: 15px; margin-bottom: 4px; }
+.time-body p { color: var(--muted); font-size: 13px; }
+.metric { font-size: 34px; font-weight: 950; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.archive a, .contact a { color: var(--soft); text-decoration: none; border-bottom: 1px solid transparent; }
+.archive a:hover, .contact a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  padding: 28px;
+}
+@media (max-width: 760px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .wrap, .hero { padding-left: 22px; padding-right: 22px; }
+  .hero { padding-top: 66px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .project { grid-template-columns: 1fr; }
+  .time-item { grid-template-columns: 1fr; gap: 6px; }
+}
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>Pengyi · Personal Website</h1>
-  <p>Three experimental versions — choose which to develop further.</p>
-  <div class="cards">
-    <a class="card card-a" href="version_A_academic.html">
-      <div>
-        <div class="card-label">Version A</div>
-        <div class="card-title">Academic — PhD / Research</div>
-        <div class="card-desc">KCL · WorldQuant · HKU PhD · Research-first presentation</div>
-      </div>
-      <div class="card-arrow">→</div>
-    </a>
-    <a class="card card-b" href="version_B_industry.html">
-      <div>
-        <div class="card-label">Version B</div>
-        <div class="card-title">Industry — Quant Engineer / Builder</div>
-        <div class="card-desc">FICC AI Infra · PM2.0 · Technical stack · Engineering-first</div>
-      </div>
-      <div class="card-arrow">→</div>
-    </a>
-    <a class="card card-c" href="version_C_universal.html">
-      <div>
-        <div class="card-label">Version C</div>
-        <div class="card-title">Universal — Researcher × Builder</div>
-        <div class="card-desc">Balanced · Timeline · Both academic and industry facing</div>
-      </div>
-      <div class="card-arrow">→</div>
-    </a>
+<nav>
+  <a class="brand" href="#">Pengyi<span>.</span></a>
+  <div class="nav-links">
+    <a href="#mission">Mission</a>
+    <a href="#projects">Projects</a>
+    <a href="#learning">Learning OS</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
   </div>
-</div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="eyebrow">AI Scientist in Training</div>
+    <h1>Building <span class="gradient">AI research agents</span> for quantitative discovery.</h1>
+    <p class="hero-sub">
+      I am Pengyi, a quant research engineer and AI builder focused on turning messy financial research workflows into reproducible systems:
+      hypothesis generation, implementation, backtesting, diagnosis, and next-round research planning.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Quant R&D Agent</span>
+      <span class="pill">Research OS</span>
+      <span class="pill">LLM Agents for Finance</span>
+      <span class="pill">RA / PhD Pipeline</span>
+      <span class="pill">Open-source Research Infrastructure</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://github.com/pengpengyi92" target="_blank" rel="noreferrer">GitHub Profile</a>
+      <a class="btn btn-secondary" href="learning.html">Learning Log</a>
+      <a class="btn btn-secondary" href="mailto:pengpengyi92@gmail.com">Contact</a>
+    </div>
+  </header>
+
+  <section id="mission">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Mission</div>
+        <h2>From real financial constraints to research automation.</h2>
+        <p class="lead">
+          My core direction is to build a public, reproducible research stack for AI-assisted quantitative discovery.
+          The long-term goal is to become an AI scientist who can produce strong open-source systems, technical reports, and top-conference research.
+        </p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Research Thesis</h3>
+          <p>Quant research is a loop, not a one-off model. The valuable system is an agentic workflow that can repeatedly propose, implement, test, diagnose, and revise hypotheses.</p>
+          <ul>
+            <li>Factor hypothesis generation</li>
+            <li>Backtest and bias diagnosis</li>
+            <li>Research memory and experiment lineage</li>
+            <li>Human PM review before production decisions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Career Thesis</h3>
+          <p>The next position should strengthen both research credibility and engineering output. RA, research engineer, quant researcher, and AI-for-finance roles are all evaluated by this bar.</p>
+          <ul>
+            <li>Can it produce papers, reports, or public systems?</li>
+            <li>Can it create strong recommendation signals?</li>
+            <li>Can it preserve cash flow and deep-work time?</li>
+            <li>Can it compound into PhD and open-source impact?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Projects</div>
+        <h2>Current public-facing project portfolio.</h2>
+        <p class="lead">These projects form one system: a personal research operating system for quant, AI agents, paper production, and application materials.</p>
+      </div>
+      <div class="card">
+        <div class="project">
+          <div>
+            <h3>Pengyi Quant R&D Agent</h3>
+            <p>Agent workflow for quant research: factor hypothesis, implementation, backtesting, bias diagnosis, and next research plan generation.</p>
+            <div class="tag-row">
+              <span class="tag">LLM Agent</span><span class="tag">Quant Research</span><span class="tag">Backtesting</span><span class="tag">Research Loop</span>
+            </div>
+          </div>
+          <span class="status gold">Active</span>
+        </div>
+        <div class="project">
+          <div>
+            <h3>Pengyi Quant Research OS v0</h3>
+            <p>A reproducible research operating system for experiments, reports, artifacts, and factor research lineage.</p>
+            <div class="tag-row">
+              <span class="tag">Research OS</span><span class="tag">Experiment Tracking</span><span class="tag">Open Source</span>
+            </div>
+          </div>
+          <span class="status">Built</span>
+        </div>
+        <div class="project">
+          <div>
+            <h3>Auto Paper NorthPolestar</h3>
+            <p>Paper-production workspace for turning project ideas, experiments, and benchmark results into technical reports and preprint-ready drafts.</p>
+            <div class="tag-row">
+              <span class="tag">Technical Report</span><span class="tag">Paper Pipeline</span><span class="tag">AI Scientist</span>
+            </div>
+          </div>
+          <span class="status blue">Drafting</span>
+        </div>
+        <div class="project">
+          <div>
+            <h3>Auto CV Space</h3>
+            <p>Versioned CV and application package system for RA, PhD, AI research, and quant roles.</p>
+            <div class="tag-row">
+              <span class="tag">RA Application</span><span class="tag">PhD Package</span><span class="tag">Narrative System</span>
+            </div>
+          </div>
+          <span class="status">Maintained</span>
+        </div>
+        <div class="project">
+          <div>
+            <h3>FICC AI Infra Demo</h3>
+            <p>Public-safe demo direction for financial research automation, focused on architecture and workflow rather than confidential data.</p>
+            <div class="tag-row">
+              <span class="tag">AI Infra</span><span class="tag">Finance Workflow</span><span class="tag">Public-safe Demo</span>
+            </div>
+          </div>
+          <span class="status red">Sanitize</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Learning OS</div>
+        <h2>Everything learned should become an asset.</h2>
+        <p class="lead">This website is not only a CV page. It is a public index of learning, research output, engineering progress, and career compounding.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Research</h3>
+          <p>Reading papers in LLM agents, AI for finance, time-series modelling, backtesting, and research automation.</p>
+        </div>
+        <div class="card">
+          <h3>Engineering</h3>
+          <p>Building reproducible Python systems, CLI tools, experiment artifacts, documentation, tests, and public demos.</p>
+        </div>
+        <div class="card">
+          <h3>Writing</h3>
+          <p>Converting projects into technical notes, benchmark reports, RA emails, PhD statements, and future preprints.</p>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:18px;">
+        See the structured log: <a href="learning.html">learning.html</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Signals</div>
+        <h2>Selected achievements and proof points.</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="metric">#1</div>
+          <h3>WorldQuant IQC UK Rank</h3>
+          <p>Quant alpha research signal and competitive proof point.</p>
+        </div>
+        <div class="card">
+          <div class="metric">KCL</div>
+          <h3>Mathematics & Data Science</h3>
+          <p>Mathematical foundation for quantitative finance, statistics, and machine learning.</p>
+        </div>
+        <div class="card">
+          <div class="metric">OS</div>
+          <h3>Research Infrastructure</h3>
+          <p>Building an integrated project system across agents, experiments, CVs, notes, and paper drafts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">2026 Roadmap</div>
+        <h2>Current transition plan.</h2>
+      </div>
+      <div class="card timeline">
+        <div class="time-item">
+          <div class="time-date">Now</div>
+          <div class="time-body">
+            <h3>RA / research role pipeline</h3>
+            <p>Apply to aligned labs and teams in AI agents, AI for finance, quant research automation, RAG, and research engineering.</p>
+          </div>
+        </div>
+        <div class="time-item">
+          <div class="time-date">Next</div>
+          <div class="time-body">
+            <h3>Technical report and public demo</h3>
+            <p>Package Quant R&D Agent and Research OS into a public-safe demo, with examples, tests, and a short technical report.</p>
+          </div>
+        </div>
+        <div class="time-item">
+          <div class="time-date">PhD cycle</div>
+          <div class="time-body">
+            <h3>Use RA output to strengthen PhD applications</h3>
+            <p>Target stronger recommendation letters, clearer research fit, and tangible project output before the next application cycle.</p>
+          </div>
+        </div>
+        <div class="time-item">
+          <div class="time-date">Long horizon</div>
+          <div class="time-body">
+            <h3>Open-source AI scientist system</h3>
+            <p>Compound toward a public research system with benchmark results, papers, and an independent open-source identity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="archive">
+    <div class="wrap archive">
+      <div class="section-head">
+        <div class="label">Archive</div>
+        <h2>Earlier website versions.</h2>
+        <p class="lead">These older drafts are preserved as design and narrative experiments.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3><a href="version_A_academic.html">Version A</a></h3>
+          <p>Academic / PhD / research-first presentation.</p>
+        </div>
+        <div class="card">
+          <h3><a href="version_B_industry.html">Version B</a></h3>
+          <p>Industry / quant engineer / builder-first presentation.</p>
+        </div>
+        <div class="card">
+          <h3><a href="version_C_universal.html">Version C</a></h3>
+          <p>Universal researcher-builder presentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="section-head">
+        <div class="label">Contact</div>
+        <h2>Research, RA, PhD, and AI-for-finance opportunities.</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:pengpengyi92@gmail.com">pengpengyi92@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/pengpengyi92" target="_blank" rel="noreferrer">github.com/pengpengyi92</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Pengyi - AI Scientist in training - Quant Research Engineer - Public-safe portfolio v0.2
+</footer>
 </body>
 </html>
