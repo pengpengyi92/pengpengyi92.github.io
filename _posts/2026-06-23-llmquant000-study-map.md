@@ -485,9 +485,10 @@ factor idea
 | `LLMQUANT004` | `Magents` | multi-agent trading simulation and backtesting |
 | `LLMQUANT005` | `awesome-trading-agents` | trading agent ecosystem radar |
 | `LLMQUANT006` | `docs`, `llmquant-book`, `quant-wiki` | finance knowledge layer |
-| `LLMQUANT007` | `pengyi_quant_rd_agent` | R&D agent loop design |
-| `LLMQUANT008` | `pengyi_quant_research_os_v0` | experiment ledger and research contracts |
-| `LLMQUANT009` | `llmquantpengyistrategy` | WorldQuant-style factor research lab |
+| `LLMQUANT007` | GitHub public repos | ecosystem coverage matrix and phase-1 closure |
+| `LLMQUANT008` | `pengyi_quant_rd_agent` | R&D agent loop design |
+| `LLMQUANT009` | `pengyi_quant_research_os_v0` | experiment ledger and research contracts |
+| `LLMQUANT010` | `llmquantpengyistrategy` | WorldQuant-style factor research lab |
 
 每一篇都回答三个问题：
 

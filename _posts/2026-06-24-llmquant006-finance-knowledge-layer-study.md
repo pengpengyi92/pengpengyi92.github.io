@@ -419,8 +419,8 @@ Finance Context、llmquant-book、Quant Wiki 共同提供了这个知识层。
 让未来的 Quant R&D Agent 有可检索、可复用、可审计的金融知识底座。
 ```
 
-下一篇可以继续往自己的系统推进：
+下一篇先做第一阶段总复盘，把 GitHub 上的 LLMQuant public repos 和我们已经写过的 000-006 做 coverage matrix：
 
 ```text
-LLMQUANT007 -> Pengyi Quant R&D Agent design
+LLMQUANT007 -> LLMQuant ecosystem coverage matrix
 ```
