@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds027-higpt-study/">HKUDS027: HiGPT 作为 Heterogeneous Graph Language Model 与 Structured Multimodal Layer</a></h3>
+            <p>发布 HKUDS HiGPT 深度学习笔记，拆解它如何把 GraphGPT 的 graph-language instruction tuning 推进到 heterogeneous graph 场景：通过 HG_grounding 做 CLIP-style text-graph contrastive alignment，用 MetaHGT / MetaHeteroLinear / ParameterGenerator 把 node type 与 edge type 语义转成动态图编码参数，再通过 offline heterogeneous graph tokenizing、HeteroLlama、&lt;g_patch&gt; token replacement、heterogeneous graph instruction tuning 和 Mixture-of-Thought augmentation，让 LLM 理解不同 schema 的结构化关系；同时明确它属于 Graph-Language / Structured Multimodal，而不是传统图像多模态，并总结它对 Quant Research OS 的 company-event-asset graph、factor-risk-regime graph 和 R&amp;D Agent graph instruction dataset 的启发。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">HiGPT</span><span class="tag">Heterogeneous Graph</span><span class="tag">Graph-Language Model</span><span class="tag">Structured Multimodal</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds026-graphgpt-study/">HKUDS026: GraphGPT 作为 Graph Instruction Tuning 与 Graph-Language Alignment Layer</a></h3>
             <p>发布 HKUDS GraphGPT 深度学习笔记，拆解它如何把 LLaVA-style multimodal alignment 迁移到 graph-language 场景：通过 text-graph grounding 训练 GraphCLIP / graph transformer，将 PyG 子图编码成 graph tokens，再由 GraphLlama、graph projector、&lt;g_start&gt; / &lt;g_patch&gt; / &lt;g_end&gt; token 注入 Vicuna / Llama embedding space，并通过 stage-1 graph matching 与 stage-2 NC / LP / CoT instruction tuning 让 LLM 学会图任务；同时总结它和 GraphAgent / OpenGraph 的分工，以及它如何启发 Pengyi Research OS / Quant Research OS 的 graph instruction dataset、factor graph reasoning 和 R&amp;D Agent 诊断规划层。</p>
             <div class="tag-row">
