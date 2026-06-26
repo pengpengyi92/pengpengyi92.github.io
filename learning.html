@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds024-graphagent-study/">HKUDS024: GraphAgent 作为 Agentic Graph Language Assistant 与 Graph Reasoning Layer</a></h3>
+            <p>发布 HKUDS GraphAgent 深度学习笔记，拆解它如何把 user instruction 先规划成 predictive / generative task，再通过 scaffold node extraction、scaffold text parsing、keyword extraction 构造 PyG HeteroData，并用 SentenceTransformer、MetaHGT graph tokenizer、graph special tokens、HeteroGraphLLMForCausalLM 和 graph projector 把异构图 embedding 注入 Llama-style language model；同时总结 stage-1/stage-2 训练链路、dataset/benchmark、它和 LightRAG / VideoRAG / QuantMind 的区别，以及它如何成为 Pengyi Research OS / Quant Research OS 的 graph memory 与 graph-aware execution layer。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">GraphAgent</span><span class="tag">Graph LLM</span><span class="tag">Knowledge Graph</span><span class="tag">Graph Reasoning</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds023-openspace-study/">HKUDS023: OpenSpace 作为 Self-Evolving Agent Workspace 与 Skill Economy Layer</a></h3>
             <p>发布 HKUDS OpenSpace 深度学习笔记，拆解它如何把 agent execution 变成可记录、可评估、可进化、可共享的 skill lifecycle system；重点分析 OpenSpace.execute 主链路、GroundingAgent 多轮工具执行、SkillRegistry 的 skill 发现与注入、SkillStore 的 SQLite lineage/quality ledger、ExecutionAnalyzer 的任务后复盘、SkillEvolver 的 FIX / DERIVED / CAPTURED 三种进化、MCP 四工具接口、cloud skill community、dashboard、GDPVal cold/warm benchmark，以及它如何成为 Pengyi Research OS / Quant Research OS 的 self-evolving workflow layer。</p>
             <div class="tag-row">
