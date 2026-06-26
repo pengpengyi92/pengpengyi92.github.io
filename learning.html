@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds026-graphgpt-study/">HKUDS026: GraphGPT 作为 Graph Instruction Tuning 与 Graph-Language Alignment Layer</a></h3>
+            <p>发布 HKUDS GraphGPT 深度学习笔记，拆解它如何把 LLaVA-style multimodal alignment 迁移到 graph-language 场景：通过 text-graph grounding 训练 GraphCLIP / graph transformer，将 PyG 子图编码成 graph tokens，再由 GraphLlama、graph projector、&lt;g_start&gt; / &lt;g_patch&gt; / &lt;g_end&gt; token 注入 Vicuna / Llama embedding space，并通过 stage-1 graph matching 与 stage-2 NC / LP / CoT instruction tuning 让 LLM 学会图任务；同时总结它和 GraphAgent / OpenGraph 的分工，以及它如何启发 Pengyi Research OS / Quant Research OS 的 graph instruction dataset、factor graph reasoning 和 R&amp;D Agent 诊断规划层。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">GraphGPT</span><span class="tag">Graph Instruction Tuning</span><span class="tag">Graph LLM</span><span class="tag">Graph-Language Alignment</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds025-opengraph-study/">HKUDS025: OpenGraph 作为 Open Graph Foundation Model 与 Zero-Shot Graph Generalization Layer</a></h3>
             <p>发布 HKUDS OpenGraph 深度学习笔记，拆解它如何用 LLM-enhanced graph data generation、InitialProjector 统一 graph tokenizer、SVD/topology-aware projection、TopoEncoder adjacency smoothing、anchor-sampled GraphTransformer、link prediction pretraining 和 node classification evaluation 构建跨图 zero-shot generalization 能力；同时总结它和 GraphAgent 的分工，以及它如何启发 Pengyi Research OS / Quant Research OS 的 graph foundation layer、factor graph、asset-event graph 和 research opportunity link prediction。</p>
             <div class="tag-row">
