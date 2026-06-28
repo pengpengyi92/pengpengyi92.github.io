@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds028-reclm-study/">HKUDS028: RecLM 作为 Recommendation Instruction Tuning 与 Profile-Augmented Ranking Layer</a></h3>
+            <p>发布 HKUDS RecLM 深度学习笔记，正式进入 Recommendation / Finance-adjacent 主线；拆解 RecLM 如何把 Llama-2 LoRA SFT、collaborative instruction tuning、user/item profile generation、chosen/rejected reward modeling、PPO profile enhancement 和 BiasMF / LightGCN / NCF / SGL / SimGCL 等 base recommender 连接起来，把 LLM 生成的 semantic profile 作为 plug-and-play feature 增强推荐排序；同时总结它对 Quant Research OS 的 factor profile、strategy profile、PM preference modeling、research idea recommendation 和 profile-augmented ranking layer 的启发。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">RecLM</span><span class="tag">Recommendation</span><span class="tag">Instruction Tuning</span><span class="tag">Ranking</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds027-higpt-study/">HKUDS027: HiGPT 作为 Heterogeneous Graph Language Model 与 Structured Multimodal Layer</a></h3>
             <p>发布 HKUDS HiGPT 深度学习笔记，拆解它如何把 GraphGPT 的 graph-language instruction tuning 推进到 heterogeneous graph 场景：通过 HG_grounding 做 CLIP-style text-graph contrastive alignment，用 MetaHGT / MetaHeteroLinear / ParameterGenerator 把 node type 与 edge type 语义转成动态图编码参数，再通过 offline heterogeneous graph tokenizing、HeteroLlama、&lt;g_patch&gt; token replacement、heterogeneous graph instruction tuning 和 Mixture-of-Thought augmentation，让 LLM 理解不同 schema 的结构化关系；同时明确它属于 Graph-Language / Structured Multimodal，而不是传统图像多模态，并总结它对 Quant Research OS 的 company-event-asset graph、factor-risk-regime graph 和 R&amp;D Agent graph instruction dataset 的启发。</p>
             <div class="tag-row">
