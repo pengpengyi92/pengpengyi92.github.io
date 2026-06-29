@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds030-autocf-study/">HKUDS030: AutoCF 作为 Automated Self-Supervised Collaborative Filtering 与 Recommendation Backbone Layer</a></h3>
+            <p>发布 HKUDS AutoCF 深度学习笔记，继续 Recommendation / Finance-adjacent 主线；拆解 AutoCF 如何在 sparse Yelp / Gowalla / Amazon user-item graph 上，用 LocalGraph 自动选择 masking seeds，用 RandomMaskSubgraphs 构造 encoder / decoder adjacency，再通过 GCN encoder、graph transformer decoder、recommendation objective、contrastive regularization 和 local-global seed reward 学习鲁棒的 collaborative filtering representation；同时把它定位成 RecLM / XRec 下面的 recommendation backbone layer，并映射到 Quant Research OS 的 factor / strategy / paper / repo interaction graph 表示学习底座。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">AutoCF</span><span class="tag">Collaborative Filtering</span><span class="tag">Self-Supervised Learning</span><span class="tag">Graph Augmentation</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds029-xrec-study/">HKUDS029: XRec 作为 Explainable Recommendation 与 Collaborative-Signal-to-Language Layer</a></h3>
             <p>发布 HKUDS XRec 深度学习笔记，继续 Recommendation / Finance-adjacent 主线；拆解 XRec 如何用 LightGCN 从 user-item interaction graph 学到 user/item embedding，再通过 MoE adapter 把 64 维协同过滤信号投影到 LLaMA 4096 维 hidden space，并借助 &lt;USER_EMBED&gt; / &lt;ITEM_EMBED&gt; / &lt;EXPLAIN_POS&gt; special token、embedding replacement 和 modified LLaMA attention Q/K/V injection，生成被 collaborative signal 约束的 recommendation explanation；同时总结它对 Quant Research OS 的 factor / strategy / repo / paper recommendation explanation layer 的启发。</p>
             <div class="tag-row">
