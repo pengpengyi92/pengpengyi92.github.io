@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds029-xrec-study/">HKUDS029: XRec 作为 Explainable Recommendation 与 Collaborative-Signal-to-Language Layer</a></h3>
+            <p>发布 HKUDS XRec 深度学习笔记，继续 Recommendation / Finance-adjacent 主线；拆解 XRec 如何用 LightGCN 从 user-item interaction graph 学到 user/item embedding，再通过 MoE adapter 把 64 维协同过滤信号投影到 LLaMA 4096 维 hidden space，并借助 &lt;USER_EMBED&gt; / &lt;ITEM_EMBED&gt; / &lt;EXPLAIN_POS&gt; special token、embedding replacement 和 modified LLaMA attention Q/K/V injection，生成被 collaborative signal 约束的 recommendation explanation；同时总结它对 Quant Research OS 的 factor / strategy / repo / paper recommendation explanation layer 的启发。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">XRec</span><span class="tag">Explainable Recommendation</span><span class="tag">LightGCN</span><span class="tag">MoE Adapter</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds028-reclm-study/">HKUDS028: RecLM 作为 Recommendation Instruction Tuning 与 Profile-Augmented Ranking Layer</a></h3>
             <p>发布 HKUDS RecLM 深度学习笔记，正式进入 Recommendation / Finance-adjacent 主线；拆解 RecLM 如何把 Llama-2 LoRA SFT、collaborative instruction tuning、user/item profile generation、chosen/rejected reward modeling、PPO profile enhancement 和 BiasMF / LightGCN / NCF / SGL / SimGCL 等 base recommender 连接起来，把 LLM 生成的 semantic profile 作为 plug-and-play feature 增强推荐排序；同时总结它对 Quant Research OS 的 factor profile、strategy profile、PM preference modeling、research idea recommendation 和 profile-augmented ranking layer 的启发。</p>
             <div class="tag-row">
