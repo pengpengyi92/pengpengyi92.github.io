@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds031-kgrec-study/">HKUDS031: KGRec 作为 Knowledge Graph Self-Supervised Rationalization 与 KG-Grounded Recommendation Layer</a></h3>
+            <p>发布 HKUDS KGRec 深度学习笔记，完成 Recommendation / Finance-adjacent 主线的 KG-grounded recommendation 补强；拆解 KGRec 如何把 user-item interaction graph、entity-relation knowledge graph、AttnHGCN relation-aware attention、KG edge rationale score、masked KG edge reconstruction、adaptive UI / KG contrastive views 和 BPR ranking 连接起来，让 recommendation 不只依赖 collaborative interaction，也能识别哪些 knowledge edges rationalize the recommendation；同时映射到 Quant Research OS 的 factor / strategy / paper / repo knowledge graph、rationale edge selection、PM review evidence layer 和 grounded explanation pipeline。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">KGRec</span><span class="tag">Knowledge Graph</span><span class="tag">Recommendation</span><span class="tag">Rationalization</span><span class="tag">Quant OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds030-autocf-study/">HKUDS030: AutoCF 作为 Automated Self-Supervised Collaborative Filtering 与 Recommendation Backbone Layer</a></h3>
             <p>发布 HKUDS AutoCF 深度学习笔记，继续 Recommendation / Finance-adjacent 主线；拆解 AutoCF 如何在 sparse Yelp / Gowalla / Amazon user-item graph 上，用 LocalGraph 自动选择 masking seeds，用 RandomMaskSubgraphs 构造 encoder / decoder adjacency，再通过 GCN encoder、graph transformer decoder、recommendation objective、contrastive regularization 和 local-global seed reward 学习鲁棒的 collaborative filtering representation；同时把它定位成 RecLM / XRec 下面的 recommendation backbone layer，并映射到 Quant Research OS 的 factor / strategy / paper / repo interaction graph 表示学习底座。</p>
             <div class="tag-row">
