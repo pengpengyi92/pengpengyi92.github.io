@@ -182,6 +182,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-06</div>
           <div class="log-body">
+            <h3><a href="/posts/hkuds034-clawwork-study/">HKUDS034: ClawWork 作为 AI Coworker 与 Economic Accountability Layer</a></h3>
+            <p>发布 HKUDS ClawWork 深度学习笔记，继续 Agent Product / Workspace 系列第二站；拆解 ClawWork 如何把 AI assistant 推进成 economically accountable coworker：用 GDPVal 220 个真实专业任务和 44 个职业类别构造 work contract，通过 TaskManager 分配任务和 BLS wage / hours 定价，通过 LiveAgent daily loop 执行 work / learn 决策，通过 submit_work 提交文本或文件 artifact，通过 WorkEvaluator / LLMEvaluator / meta_prompts 按职业 rubric 打分，通过 EconomicTracker 记录 token/API 成本、余额、实际付款、0.6 质量阈值、survival status，并用 FastAPI + React dashboard 展示 income、cost、quality、task completion、leaderboard；同时分析 ClawMode 如何嵌入 Nanobot / OpenClaw，用 /clawwork command、TaskClassifier、TrackedProvider 和 cost footer 把任意对话任务变成可估价、可评价、可付费的 live work；最后映射到 Pengyi Research OS / Quant Research OS：研究任务也应该有 budget、artifact、rubric、quality score、ROI、PM approval 和下一轮资源分配。</p>
+            <div class="tag-row">
+              <span class="tag">HKUDS</span><span class="tag">ClawWork</span><span class="tag">AI Coworker</span><span class="tag">Economic Benchmark</span><span class="tag">GDPVal</span><span class="tag">Research OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-06</div>
+          <div class="log-body">
             <h3><a href="/posts/hkuds033-clawteam-study/">HKUDS033: ClawTeam 作为 Agent Swarm Intelligence 与 AI Organization Layer</a></h3>
             <p>发布 HKUDS ClawTeam 深度学习笔记，正式进入 Agent Product / Workspace 系列；拆解 ClawTeam 如何把 agent 组织成可执行的 team：通过 team/task/inbox/plan/lifecycle schema、~/.clawteam 文件状态层、FileTaskStore 并发锁、Mailbox transport、tmux / subprocess spawn backend、git worktree 隔离、board / Web UI、MCP tools、agent skill 和 TOML team templates，让 leader agent 能创建团队、拆任务、spawn workers、发消息、监控进度、checkpoint / merge 工作区；同时映射到 Pengyi Research OS / Quant Research OS 的 PM Agent、Research Agent、Backtest Agent、Risk Agent、Report Agent 组织层。</p>
             <div class="tag-row">
