@@ -182,6 +182,56 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
         <div class="log-item">
           <div class="date">2026-07</div>
           <div class="log-body">
+            <h3><a href="/posts/mlrl005-ml-rl-unified-view-quant-agent-llm/">MLRL005: Quant / Agent / LLM 里的 ML-RL 统一视角</a></h3>
+            <p>发布 MLRL005，把 Quant、Agent、LLM 放进统一的 ML-RL-Harness 框架：ML 负责从数据里学规律，RL 负责从反馈里学行为，LLM 提供通用 policy 和 representation engine，Harness 定义环境、动作、约束、日志和评估；文章系统对照 quant research、coding agent、research OS、RAG / Graph RAG、evaluation，并把它们统一映射到 Pengyi Quant Research OS、DeepSeek Coding Agent Harness 和 AI Scientist 路线。</p>
+            <div class="tag-row">
+              <span class="tag">MLRL005</span><span class="tag">Quant</span><span class="tag">Agent</span><span class="tag">LLM</span><span class="tag">Harness</span><span class="tag">Research OS</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-07</div>
+          <div class="log-body">
+            <h3><a href="/posts/mlrl004-rlhf-agent-training/">MLRL004: RLHF / Agent Training</a></h3>
+            <p>发布 MLRL004，细化 RLHF 与 Agent Training：从 pretraining、SFT、preference data、reward model、PPO-style RLHF、DPO / preference optimization 讲到 agent trajectory、outcome reward、process reward、evaluator、reward hacking 和 harness；重点解释 coding agent 与 quant research agent 如何把 state、action、reward、trajectory、tool feedback 和 evaluator 串成可训练、可评估的行为优化系统。</p>
+            <div class="tag-row">
+              <span class="tag">MLRL004</span><span class="tag">RLHF</span><span class="tag">Agent Training</span><span class="tag">Reward Model</span><span class="tag">Preference Optimization</span><span class="tag">Evaluator</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-07</div>
+          <div class="log-body">
+            <h3><a href="/posts/mlrl003-reinforcement-learning-foundations/">MLRL003: Reinforcement Learning 基础</a></h3>
+            <p>发布 MLRL003，系统梳理强化学习基础：agent、environment、state、observation、action、reward、policy、trajectory、return、MDP、value function、Q function、exploration vs exploitation、credit assignment，并进一步拆解 value-based methods、Q-learning、DQN、policy gradient、actor-critic、PPO、model-free / model-based、offline RL，以及它们在 LLM agent、coding agent 和 trading agent 中的对应关系。</p>
+            <div class="tag-row">
+              <span class="tag">MLRL003</span><span class="tag">Reinforcement Learning</span><span class="tag">MDP</span><span class="tag">Policy</span><span class="tag">Actor-Critic</span><span class="tag">PPO</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-07</div>
+          <div class="log-body">
+            <h3><a href="/posts/mlrl002-transformer-architecture/">MLRL002: Transformer 架构</a></h3>
+            <p>发布 MLRL002，精细拆解 Transformer：从 tokenizer、token id、embedding、positional information 进入 Q / K / V、scaled dot-product attention、multi-head attention、causal mask、FFN、residual connection、LayerNorm、encoder-only、decoder-only、encoder-decoder、KV cache；进一步说明 Transformer 如何成为 LLM、RAG、Agent、Quant text modeling 的底层结构。</p>
+            <div class="tag-row">
+              <span class="tag">MLRL002</span><span class="tag">Transformer</span><span class="tag">Attention</span><span class="tag">LLM</span><span class="tag">QKV</span><span class="tag">KV Cache</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-07</div>
+          <div class="log-body">
+            <h3><a href="/posts/mlrl001-pytorch-architecture-training-loop/">MLRL001: PyTorch 架构与训练循环</a></h3>
+            <p>发布 MLRL001，系统讲解 PyTorch 的工程底座：Tensor、shape / dtype / device / requires_grad、autograd、zero_grad / backward / optimizer.step、nn.Module、Dataset / DataLoader、loss、optimizer、scheduler、train loop、eval loop、checkpoint、mixed precision 和常见坑位；文章把 PyTorch 训练循环直接接到 quant model、reward model、embedding model、agent evaluator 和 Research OS 的可复现实验要求上。</p>
+            <div class="tag-row">
+              <span class="tag">MLRL001</span><span class="tag">PyTorch</span><span class="tag">Autograd</span><span class="tag">Training Loop</span><span class="tag">nn.Module</span><span class="tag">Research Engineering</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-item">
+          <div class="date">2026-07</div>
+          <div class="log-body">
             <h3><a href="/posts/mlrl000-study-map/">MLRL000: Machine Learning / Reinforcement Learning / PyTorch / Transformer 总地图</a></h3>
             <p>发布 PENGYI_ML_RL_MAP 第一篇总地图，把 machine learning、deep learning、PyTorch、Transformer、reinforcement learning 压成一张基础能力地图；系统解释 supervised / unsupervised / self-supervised / RL 的关系，PyTorch 的 Tensor / autograd / nn.Module / DataLoader / optimizer / training loop，Transformer 的 tokenization / embedding / QKV attention / FFN / residual / LayerNorm / encoder-decoder variants，以及 RL 的 agent / environment / state / action / reward / policy / value / Q / actor-critic / PPO / RLHF；最后映射到 Pengyi Quant Research OS、AI Harness、Research OS 和后续 MLRL001-005 学习路线。</p>
             <div class="tag-row">
