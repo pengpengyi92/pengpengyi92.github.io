@@ -15,6 +15,13 @@ tags: [pengyi-hkuds-studymap, hkuds050, hkuds, remaining-map, study-map, recomme
 把 HKUDS 目前还没有系统写过的 repo 做一个剩余地图。
 ```
 
+2026-07-02 update:
+
+```text
+HKUDS051 已重新分配给 RAG 系列专题总结。
+OpenCity / Urban-ST continuation 顺延到后续 Urban-ST 专题节点。
+```
+
 我们已经做到了：
 
 ```text
@@ -856,38 +863,40 @@ method comparison table
 
 ## 后续编号路线建议
 
-我建议从 `HKUDS051` 开始这样排：
+`HKUDS051` 已插入为 RAG 系列专题总结，所以原来的 Urban / ST 后续路线顺延一位。
+
+我建议从 `HKUDS052` 开始这样排：
 
 | 编号 | Repo / Topic | 系列 | 为什么看 |
 |---|---|---|---|
-| `HKUDS051` | `OpenCity` | Urban / ST Foundation | 接 UrbanGPT，理解时空 foundation model |
-| `HKUDS052` | `EasyST` | Urban / ST Baseline | 建立可复现时空预测 baseline |
-| `HKUDS053` | `AutoST` | Urban / ST SSL | 学自动化时空对比学习 |
-| `HKUDS054` | `FlashST + GPT-ST` | Urban / ST Pretraining | 看 prompt tuning 与 generative pretraining |
-| `HKUDS055` | `GraphST + CL4ST + STExplainer` | Urban / ST Model Zoo | 做时空图模型综合 |
-| `HKUDS056` | `AnyGraph` | Graph Foundation | 补 graph foundation model |
-| `HKUDS057` | `GraphEdit` | Graph Structure Learning | 学 LLM 如何修改和治理 graph |
-| `HKUDS058` | `LLMRec + RLMRec` | LLM Recommendation | LLM 表征与推荐系统结合 |
-| `HKUDS059` | `RecGPT + EasyRec` | Recommendation FM | sequential recommendation foundation model |
-| `HKUDS060` | `SSLRec` | SSL Recommendation | self-supervised recommendation 总框架 |
-| `HKUDS061` | `LightGCL + AdaGCL` | Graph Contrastive Rec | GCL 推荐系统核心方法 |
-| `HKUDS062` | `GTE + GraphPro + GFormer` | Graph Rec Theory / Pretraining | GNN 表达力、预训练、transformer |
-| `HKUDS063` | `DiffKG + DiffMM + RecDiff` | Diffusion Rec | diffusion 和推荐融合 |
-| `HKUDS064` | `DSL + DCCF + DCRec + DGNN` | Social / Debiased Rec | social rec / debias / disentangle |
-| `HKUDS065` | `Awesome-SSLRec / LLM4Graph / LLM4Urban` | Survey Map | 三条顶会阅读路线图 |
-| `HKUDS066` | `Remaining Rec Cluster Summary` | Final Map | recommendation 剩余项目总复盘 |
+| `HKUDS052` | `OpenCity` | Urban / ST Foundation | 接 UrbanGPT，理解时空 foundation model |
+| `HKUDS053` | `EasyST` | Urban / ST Baseline | 建立可复现时空预测 baseline |
+| `HKUDS054` | `AutoST` | Urban / ST SSL | 学自动化时空对比学习 |
+| `HKUDS055` | `FlashST + GPT-ST` | Urban / ST Pretraining | 看 prompt tuning 与 generative pretraining |
+| `HKUDS056` | `GraphST + CL4ST + STExplainer` | Urban / ST Model Zoo | 做时空图模型综合 |
+| `HKUDS057` | `AnyGraph` | Graph Foundation | 补 graph foundation model |
+| `HKUDS058` | `GraphEdit` | Graph Structure Learning | 学 LLM 如何修改和治理 graph |
+| `HKUDS059` | `LLMRec + RLMRec` | LLM Recommendation | LLM 表征与推荐系统结合 |
+| `HKUDS060` | `RecGPT + EasyRec` | Recommendation FM | sequential recommendation foundation model |
+| `HKUDS061` | `SSLRec` | SSL Recommendation | self-supervised recommendation 总框架 |
+| `HKUDS062` | `LightGCL + AdaGCL` | Graph Contrastive Rec | GCL 推荐系统核心方法 |
+| `HKUDS063` | `GTE + GraphPro + GFormer` | Graph Rec Theory / Pretraining | GNN 表达力、预训练、transformer |
+| `HKUDS064` | `DiffKG + DiffMM + RecDiff` | Diffusion Rec | diffusion 和推荐融合 |
+| `HKUDS065` | `DSL + DCCF + DCRec + DGNN` | Social / Debiased Rec | social rec / debias / disentangle |
+| `HKUDS066` | `Awesome-SSLRec / LLM4Graph / LLM4Urban` | Survey Map | 三条顶会阅读路线图 |
+| `HKUDS067` | `Remaining Rec Cluster Summary` | Final Map | recommendation 剩余项目总复盘 |
 
 这只是建议路线。
 
 如果我们更想接 Quant OS，我建议优先：
 
 ```text
-HKUDS051 OpenCity
-HKUDS052 EasyST
-HKUDS053 AutoST
-HKUDS056 AnyGraph
-HKUDS058 LLMRec + RLMRec
-HKUDS060 SSLRec
+HKUDS052 OpenCity
+HKUDS053 EasyST
+HKUDS054 AutoST
+HKUDS057 AnyGraph
+HKUDS059 LLMRec + RLMRec
+HKUDS061 SSLRec
 ```
 
 因为这几篇对市场预测、资产图、信号表征和排序决策最有用。
@@ -960,7 +969,7 @@ Explainability:
 直接做：
 
 ```text
-HKUDS051 -> OpenCity
+HKUDS052 -> OpenCity
 ```
 
 理由：
@@ -974,8 +983,8 @@ HKUDS051 -> OpenCity
 然后：
 
 ```text
-HKUDS052 -> EasyST
-HKUDS053 -> AutoST
+HKUDS053 -> EasyST
+HKUDS054 -> AutoST
 ```
 
 这三篇可以形成一个小闭环：
