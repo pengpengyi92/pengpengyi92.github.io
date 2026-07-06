@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Pengyi virtual avatar</title>
+  <desc id="desc">Abstract AI quant research avatar with neural nodes and a P mark.</desc>
+  <defs>
+    <radialGradient id="bg" cx="32%" cy="18%" r="82%">
+      <stop offset="0%" stop-color="#27496d"/>
+      <stop offset="42%" stop-color="#0f2233"/>
+      <stop offset="100%" stop-color="#071018"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="96" y1="64" x2="416" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f2b84b"/>
+      <stop offset="52%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#69a7ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.95 0 0 0 0 0.72 0 0 0 0 0.29 0 0 0 0.65 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="url(#ring)" stroke-width="12" opacity="0.95"/>
+  <circle cx="256" cy="256" r="155" fill="#101d2a" opacity="0.72"/>
+
+  <g opacity="0.78" stroke="#6ee7b7" stroke-width="3" fill="none">
+    <path d="M168 178 L228 142 L306 166 L354 232 L328 318 L258 365 L184 332 L148 254 Z"/>
+    <path d="M228 142 L258 365"/>
+    <path d="M168 178 L354 232"/>
+    <path d="M184 332 L306 166"/>
+    <path d="M148 254 L328 318"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <circle cx="168" cy="178" r="11" fill="#f2b84b"/>
+    <circle cx="228" cy="142" r="9" fill="#69a7ff"/>
+    <circle cx="306" cy="166" r="10" fill="#6ee7b7"/>
+    <circle cx="354" cy="232" r="11" fill="#f2b84b"/>
+    <circle cx="328" cy="318" r="10" fill="#69a7ff"/>
+    <circle cx="258" cy="365" r="12" fill="#6ee7b7"/>
+    <circle cx="184" cy="332" r="9" fill="#f2b84b"/>
+    <circle cx="148" cy="254" r="10" fill="#69a7ff"/>
+  </g>
+
+  <path d="M225 184 H282 C325 184 352 208 352 247 C352 286 325 311 282 311 H255 V360 H225 V184 Z M255 211 V284 H279 C306 284 321 271 321 247 C321 224 306 211 279 211 H255 Z" fill="#e5edf5"/>
+  <path d="M183 395 H329" stroke="#f2b84b" stroke-width="8" stroke-linecap="round"/>
+  <text x="256" y="432" text-anchor="middle" fill="#8aa0b5" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">AI QUANT OS</text>
+</svg>

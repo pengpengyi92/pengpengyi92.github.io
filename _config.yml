@@ -56,7 +56,7 @@ pageviews:
 
 theme_mode: dark
 cdn:
-avatar:
+avatar: /assets/img/pengyi-avatar.svg
 social_preview_image:
 toc: true
 
