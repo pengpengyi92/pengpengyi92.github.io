@@ -100,8 +100,14 @@ h1 {
   font-size: 12px;
 }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.avatar-card {
+.avatar-stack {
   justify-self: end;
+  display: grid;
+  grid-template-columns: 230px 150px;
+  gap: 14px;
+  align-items: end;
+}
+.avatar-card {
   width: 230px;
   padding: 18px;
   border: 1px solid rgba(242,184,75,0.28);
@@ -111,12 +117,25 @@ h1 {
     linear-gradient(180deg, rgba(16,29,42,0.92), rgba(7,16,24,0.92));
   box-shadow: 0 24px 70px rgba(0,0,0,0.28);
 }
+.avatar-card.secondary {
+  width: 150px;
+  padding: 12px;
+  border-color: rgba(105,167,255,0.3);
+  background:
+    radial-gradient(circle at top, rgba(105,167,255,0.18), transparent 7rem),
+    linear-gradient(180deg, rgba(16,29,42,0.86), rgba(7,16,24,0.88));
+}
 .avatar-ring {
   width: 100%;
   aspect-ratio: 1;
   padding: 9px;
   border-radius: 28px;
   background: linear-gradient(135deg, var(--gold), var(--green), var(--blue));
+}
+.avatar-card.secondary .avatar-ring {
+  padding: 6px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--blue), var(--green), var(--gold));
 }
 .avatar-ring img {
   display: block;
@@ -126,6 +145,7 @@ h1 {
   border-radius: 21px;
   background: var(--bg2);
 }
+.avatar-card.secondary .avatar-ring img { border-radius: 15px; }
 .avatar-kicker {
   margin-top: 14px;
   color: var(--gold);
@@ -244,7 +264,9 @@ footer {
   .wrap, .hero { padding-left: 22px; padding-right: 22px; }
   .hero { padding-top: 66px; }
   .hero-grid { grid-template-columns: 1fr; }
-  .avatar-card { justify-self: start; width: 210px; }
+  .avatar-stack { justify-self: start; grid-template-columns: 210px 132px; }
+  .avatar-card { width: 210px; }
+  .avatar-card.secondary { width: 132px; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .project { grid-template-columns: 1fr; }
   .time-item { grid-template-columns: 1fr; gap: 6px; }
@@ -288,12 +310,21 @@ footer {
           <a class="btn btn-secondary" href="mailto:pengpengyi92@gmail.com">Contact</a>
         </div>
       </div>
-      <aside class="avatar-card" aria-label="Pengyi virtual avatar">
-        <div class="avatar-ring">
-          <img src="/assets/img/pengyi-virtual-avatar.jpg" alt="Pengyi virtual avatar">
+      <aside class="avatar-stack" aria-label="Pengyi avatar system">
+        <div class="avatar-card">
+          <div class="avatar-ring">
+            <img src="/assets/img/pengyi-virtual-avatar.jpg" alt="Pengyi virtual avatar">
+          </div>
+          <div class="avatar-kicker">Pengyi Virtual Avatar</div>
+          <div class="avatar-caption">AI x Quant x Agent builder identity.</div>
         </div>
-        <div class="avatar-kicker">Pengyi Virtual Avatar</div>
-        <div class="avatar-caption">AI x Quant x Agent builder identity.</div>
+        <div class="avatar-card secondary">
+          <div class="avatar-ring">
+            <img src="/assets/img/pengyi-avatar.svg" alt="Pengyi Research OS identity mark">
+          </div>
+          <div class="avatar-kicker">Research OS</div>
+          <div class="avatar-caption">System mark.</div>
+        </div>
       </aside>
     </div>
   </header>
