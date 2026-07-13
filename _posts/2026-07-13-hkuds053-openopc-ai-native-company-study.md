@@ -1,6 +1,6 @@
 ---
 title: "HKUDS053: OpenOPC - AI-Native Company / Self-Built Self-Run Self-Grown"
-date: 2026-07-14 00:00:00 +0800
+date: 2026-07-13 00:00:00 +0800
 categories: [Learning, Research OS]
 tags: [pengyi-hkuds-studymap, hkuds053, hkuds, openopc, ai-native-company, agent-organization, company-mode, office-ui, self-built, self-run, self-grown, research-os, founder-os]
 ---
