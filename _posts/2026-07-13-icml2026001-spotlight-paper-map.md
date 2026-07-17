@@ -59,7 +59,7 @@ Mechanistic interpretability
 
 ```text
 Pengyi AI / Quant Research OS
-FICC Rates Bond Quant
+Rates Bond Quant
 HKUDS OpenOPC / AgentSpace / OpenHarness
 LightRAG / RAG-Anything
 MLRL map

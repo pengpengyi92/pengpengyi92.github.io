@@ -1,5 +1,5 @@
 ---
-title: "FICC009: FICC Rates Bond Quant - 我们自己的开源利率债量化项目"
+title: "FICC009: Rates Bond Quant - 我们自己的开源利率债量化项目"
 date: 2026-07-15 00:00:00 +0800
 categories: [Learning, Finance, Open Source]
 tags: [ficc009, ficc, rates, fixed-income, bond-quant, duration, convexity, pnl, python, fastapi, nextjs, typescript, cloudflare-pages, open-source, public-safe]
@@ -17,15 +17,15 @@ FICC009         -> 自己实现、测试、部署并维护一个 Rates Bond Quan
 ## Project Links
 
 - **Live Website:** [ficc-rates-bond-quant.pages.dev](https://ficc-rates-bond-quant.pages.dev/)
-- **GitHub Repository:** [pengpengyi92/ficc-rates-bond-quant](https://github.com/pengpengyi92/ficc-rates-bond-quant)
+- **GitHub Repository:** [pengpengyi92/rates-bond-quant](https://github.com/pengpengyi92/rates-bond-quant)
 - **Current Milestone:** `v0.7.0`
 - **License:** MIT
 
-![FICC Rates Bond Quant project icon](https://raw.githubusercontent.com/pengpengyi92/ficc-rates-bond-quant/master/assets/ficc-rates-bond-quant-icon.png)
+![Rates Bond Quant project icon](https://raw.githubusercontent.com/pengpengyi92/rates-bond-quant/master/assets/ficc-rates-bond-quant-icon.png)
 
 ## 一句话介绍
 
-`FICC Rates Bond Quant` 是一个 public-safe 的利率债量化教学项目：它把固定利率债券现金流、定价、Macaulay Duration、Modified Duration、Convexity、平行利率冲击、持仓 P&L 和期限比较，组织成一个有 Python 核心、API 层、Web Dashboard、测试、案例、文档和版本记录的开源仓库。
+`Rates Bond Quant` 是一个 public-safe 的利率债量化教学项目：它把固定利率债券现金流、定价、Macaulay Duration、Modified Duration、Convexity、平行利率冲击、持仓 P&L 和期限比较，组织成一个有 Python 核心、API 层、Web Dashboard、测试、案例、文档和版本记录的开源仓库。
 
 我可以准确地说：
 
@@ -464,12 +464,12 @@ versioned roadmap
 
 ## References
 
-- [FICC Rates Bond Quant GitHub Repository](https://github.com/pengpengyi92/ficc-rates-bond-quant)
-- [FICC Rates Bond Quant Live Website](https://ficc-rates-bond-quant.pages.dev/)
-- [Project README](https://github.com/pengpengyi92/ficc-rates-bond-quant/blob/master/README.md)
-- [System Design](https://github.com/pengpengyi92/ficc-rates-bond-quant/blob/master/docs/system_design.md)
-- [Version Log](https://github.com/pengpengyi92/ficc-rates-bond-quant/blob/master/VERSION_LOG.md)
-- [Public / Private Boundary](https://github.com/pengpengyi92/ficc-rates-bond-quant/blob/master/docs/public_private_boundary.md)
-- [Python Quant Core](https://github.com/pengpengyi92/ficc-rates-bond-quant/tree/master/src/ficc_rates_bond_quant)
-- [Python Tests](https://github.com/pengpengyi92/ficc-rates-bond-quant/tree/master/tests)
-- [Next.js Frontend](https://github.com/pengpengyi92/ficc-rates-bond-quant/tree/master/frontend)
+- [Rates Bond Quant GitHub Repository](https://github.com/pengpengyi92/rates-bond-quant)
+- [Rates Bond Quant Live Website](https://ficc-rates-bond-quant.pages.dev/)
+- [Project README](https://github.com/pengpengyi92/rates-bond-quant/blob/master/README.md)
+- [System Design](https://github.com/pengpengyi92/rates-bond-quant/blob/master/docs/system_design.md)
+- [Version Log](https://github.com/pengpengyi92/rates-bond-quant/blob/master/VERSION_LOG.md)
+- [Public / Private Boundary](https://github.com/pengpengyi92/rates-bond-quant/blob/master/docs/public_private_boundary.md)
+- [Python Quant Core](https://github.com/pengpengyi92/rates-bond-quant/tree/master/src/ficc_rates_bond_quant)
+- [Python Tests](https://github.com/pengpengyi92/rates-bond-quant/tree/master/tests)
+- [Next.js Frontend](https://github.com/pengpengyi92/rates-bond-quant/tree/master/frontend)

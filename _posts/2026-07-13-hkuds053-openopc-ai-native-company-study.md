@@ -426,7 +426,7 @@ OpenOPC 的系统设计正好在讲这个。
 
 每个项目都可以有“虚拟公司结构”。
 
-比如 `FICC Rates Bond Quant`：
+比如 `Rates Bond Quant`：
 
 ```text
 Founder / Product Owner

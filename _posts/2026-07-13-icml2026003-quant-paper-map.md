@@ -603,7 +603,7 @@ human approval checkpoint
 failure benchmark
 ```
 
-连接 `ProFinAgents + BizFinBench + Quant Self-Play`，并落到我们现有的 FICC Rates Bond Quant 项目。
+连接 `ProFinAgents + BizFinBench + Quant Self-Play`，并落到我们现有的 Rates Bond Quant 项目。
 
 ## CV and Interview Boundary
 
@@ -670,4 +670,3 @@ research question
 - ICML 2026 official paper page: <https://icml.cc/virtual/2026/papers.html>
 - ICML 2026 OpenReview venue: <https://openreview.net/group?id=ICML.cc/2026/Conference>
 - ICML 2026 Paper Explorer based on official virtual data: <https://gisbi-kim.github.io/icml2026-explorer/output/icml2026_explorer.html>
-
